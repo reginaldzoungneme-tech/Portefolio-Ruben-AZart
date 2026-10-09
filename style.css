@@ -1,0 +1,1229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(95, 4, 4);
+    color: white;
+    line-height: 1.6;
+    padding-top: 80px;
+}
+
+/* HEADER */
+
+.header {
+    height: 80px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgb(255, 255, 255);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid #ddd6cb;
+}
+.logo img{
+    width: 250px;
+    height: 30px;
+    margin-bottom: -7px;
+}
+.header nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header nav a {
+    color: rgb(41, 6, 6);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.header nav a:hover {
+    color: rgb(240, 62, 62);
+    font-weight:  bold;
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+}
+
+
+/* GENERAL */
+
+.eyebrow {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.button {
+    display: inline-block;
+    font-size: 19px;
+    padding: 15px 27px;
+    background: #ffffff;
+    color: rgb(231, 9, 9);
+    text-decoration: none;
+    border: black;
+    border: none;
+    border-radius: 12px;
+    position: absolute;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+
+.button:hover {
+    background: rgb(155, 2, 2);
+    color: white;
+    border: 2px solid rgb(155, 2, 2);
+    
+}
+
+.button.secondary {
+    background: rgb(26, 22, 22);
+    color: white;
+    border: 1px solid rgb(22, 22, 22);
+    font-size: 20px;
+    position: absolute;
+    margin-left: 230px;
+}
+
+.button.secondary:hover {
+    background: black;
+    color: white;
+     border: 2.5px solid black;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: calc(100vh - 80px);
+    padding: 60px 7%;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 120px;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 700px;
+    
+}
+
+.hero h1 span,
+.about-content h2 span,
+.section-title h2 span,
+.commission h2 span {
+    color: #b26b3f;
+    font-style: italic;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 7vw, 100px);
+    line-height: .95;
+    margin: 25px 0;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(50px); /* Position initiale en dehors de la vue */
+    animation: slide-in 1.5s ease-out forwards; /* Animation */
+}
+ @keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* En bas */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Position finale */
+          
+    }
+}
+
+#p1{
+    opacity: 0;
+    transform: translateY(50px); /* Position initiale en dehors de la vue */
+    animation: slide-in 1.5s ease-out forwards; /* Animation */
+}
+
+.hero-description {
+    max-width: 520px;
+    font-size: 18px;
+    color: rgb(209, 190, 190);
+    font-weight: bolder;
+    font-family: Georgia, serif;
+    font-style: italic;
+    opacity: 0;
+    transform: translateY(50px); /* Position initiale en dehors de la vue */
+    animation: slide-in 1.5s ease-out forwards; /* Animation */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    opacity: 0;
+    transform: translateY(50px); /* Position initiale en dehors de la vue */
+    animation: slide-in 1.5s ease-out forwards; /* Animation */
+}
+
+
+/* HERO ART */
+
+.hero-art {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(50px); /* Position initiale en dehors de la vue */
+    animation: slide-in 1.5s ease-out forwards; /* Animation */
+}
+
+.img1{
+    width: 470px;
+    height: 640px;
+    border-radius: 30px;
+}
+
+.img2{
+    width: 465px;
+    height: 720px;
+    border-radius: 30px;
+    background-color: white;
+}
+/* ABOUT */
+
+.about {
+    padding: 130px 7%;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 90px;
+    align-items: center;
+    background: white;
+}
+
+.about-content h2 {
+    font-family: Georgia, serif;
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 500;
+    margin: 20px 0 30px;
+    color: rgb(15, 15, 15);
+}
+
+.about-content p {
+    max-width: 600px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.text-link {
+    color: #211f1b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* SECTIONS */
+
+.portfolio,
+.sketchbook,
+.services,
+.contact {
+    padding: 120px 7%;
+}
+
+.section-title {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 500;
+    margin: 18px 0;
+}
+
+.section-title > p:last-child {
+    color: #686159;
+}
+
+
+/* PORTRAITS */
+
+.portfolio {
+   background: rgb(95, 4, 4);
+    width: 100%;
+}
+
+.galerie {
+    width: 100%;
+    
+}
+
+.galerie h2 {
+    margin-bottom: 15px;
+    font-weight: bolder;
+}
+
+.galerie-container {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+    gap: 45px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.galerie-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.image-item {
+    flex: 0 0 300px;
+    width: 300px;
+    height: 400px
+}
+
+.image-item img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.accès{
+    padding-left: 580px;
+    font-size: 20px;
+}
+.accès a{
+     color: white;
+}
+
+.accès a:hover{
+    color: rgb(243, 129, 129);
+}
+
+/* SKETCHBOOK */
+
+.sketchbook {
+    background: #22211f;
+    color: white;
+}
+
+.sketchbook .section-title > p:last-child {
+    color: #bdb6ad;
+}
+
+.sketch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.sketch-card {
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.sketch-card.large {
+    grid-row: span 2;
+    height: 718px;
+}
+
+.sketch-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.sketch-card:hover img {
+    transform: scale(1.05);
+}
+
+.sketch-card span {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+
+    padding: 7px 13px;
+
+    background: rgba(0,0,0,.7);
+    color: white;
+
+    font-size: 13px;
+}
+
+
+/* SERVICES */
+
+.services {
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service {
+    padding: 40px;
+    border-top: 2px solid #211f1b;
+}
+
+.service-number {
+    color: rgb(170, 3, 3);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.service h3 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.service p {
+    color: black;
+}
+
+
+/* COMMISSION */
+
+.commission {
+    padding: 90px 7%;
+
+    background: rgb(170, 30, 30);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.commission h2 {
+    font-family: Georgia, serif;
+    font-size: 55px;
+    color: white;
+    line-height: 1;
+    margin: 15px 0;
+}
+
+.commission p {
+    max-width: 600px;
+    color: white;
+}
+
+.whatsapp-button {
+    background: white;
+    color: black;
+    font-size: 18px;
+    padding: 17px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+     border: 1px solid white;
+}
+
+.whatsapp-button:hover{
+     background: rgb(207, 5, 5);
+     color: white;
+     border: 5px solid rgb(207, 5, 5);
+}
+
+
+/* CONTACT */
+
+.contact {
+    background: #f4f0e9;
+}
+
+.section-heading h2 {
+    font-size: 35px;
+    text-align: center;
+    color: black;
+}
+.section-heading p {
+    color: red;
+    font-size: 30px;
+}
+
+.contact {
+    padding: 100px 8%;
+}
+
+.contact-box {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    color: black;
+}
+
+.contact-info {
+    margin-top: 30px;
+    color: black;
+}
+
+.btn {
+    background: brown;
+    color: white;
+    display: inline-block;
+    padding: 14px 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+
+/* FOOTER */
+
+footer {
+   background: black;
+    color: white;
+    text-align: center;
+    padding: 60px 7%;
+}
+
+.qr{
+    text-align: left;
+    margin-top: -200px;
+}
+.qr img{
+    width: 200px;
+    height: 200px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: rgb(170, 30, 30);
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+footer > p {
+    margin: 10px 0 25px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.socials a {
+    color: white;
+    text-decoration: none;
+}
+
+.socials a:hover{
+    color: rgb(214, 97, 97);
+}
+
+.copyright {
+    font-size: 13px;
+    margin-top: 40px;
+}
+#top{
+    color: white;
+    text-decoration: none;
+}
+.ul{
+    text-align: right;
+    margin-top: -50px;
+}
+
+
+/* LIGHTBOX */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+
+     background: #3d3933;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2000;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.lightbox button {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+
+    .header {
+        padding: 0 5%;
+        position: fixed;
+    }
+
+    .header nav {
+        display: none;
+
+        position: absolute;
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        flex-direction: column;
+
+        padding: 25px;
+
+        text-align: center;
+    }
+
+    .header nav.active {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 70px 5%;
+    }
+
+    .hero-art {
+        margin-top: 30px;
+    }
+
+    .drawing-card {
+        width: 300px;
+        height: 400px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        padding: 80px 5%;
+    }
+
+    .about-content h2 {
+        font-size: 45px;
+    }
+
+    .gallery,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sketch-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sketch-card.large {
+        grid-row: auto;
+        height: 450px;
+    }
+
+    .section-title h2 {
+        font-size: 45px;
+    }
+
+    .portfolio,
+    .sketchbook,
+    .services,
+    .contact {
+        padding: 80px 5%;
+    }
+
+    .commission {
+        padding: 70px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+}
+
+/* =====================================================
+   RESPONSIVE - VERSION PORTFOLIO
+   ===================================================== */
+
+/* Empêche les débordements horizontaux */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Images toujours adaptables */
+img {
+    max-width: 100%;
+}
+
+/* =========================
+   TABLETTES
+   ========================= */
+
+@media (max-width: 1100px) {
+
+    .header {
+        padding: 0 5%;
+        position: fixed;
+    }
+
+    .header nav {
+        gap: 18px;
+    }
+
+    .hero {
+        gap: 50px;
+        padding: 60px 5%;
+    }
+
+    .hero h1 {
+        font-size: clamp(50px, 7vw, 75px);
+    }
+
+    .img1 {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        max-height: 600px;
+        object-fit: cover;
+    }
+
+    .about {
+        padding: 100px 5%;
+        gap: 50px;
+    }
+
+    .img2 {
+        width: 100%;
+        max-width: 430px;
+        height: auto;
+    }
+
+    .about-content h2 {
+        font-size: 50px;
+    }
+
+    .section-title h2 {
+        font-size: 52px;
+    }
+
+    .portfolio,
+    .sketchbook,
+    .services,
+    .contact {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .galerie-container {
+        gap: 25px;
+    }
+
+    .image-item {
+        width: 270px;
+        flex-basis: 270px;
+    }
+
+    .image-item img {
+        width: 270px;
+        height: 370px;
+    }
+
+    .accès {
+        padding-left: 0;
+        display: block;
+        text-align: center;
+    }
+
+    .services-grid {
+        gap: 20px;
+    }
+
+    .service {
+        padding: 30px;
+    }
+
+    .commission {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .qr {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .ul {
+        margin-top: 25px;
+        text-align: center;
+    }
+}
+
+
+/* =========================
+   TÉLÉPHONES
+   ========================= */
+
+@media (max-width: 800px) {
+
+    /* HEADER */
+
+    .header {
+        height: 70px;
+        padding: 0 5%;
+        position: fixed;
+    }
+
+    .logo img {
+        width: 180px;
+        height: auto;
+        margin-bottom: 0;
+    }
+
+    .header nav {
+        top: 70px;
+        gap: 0;
+    }
+
+    .header nav a {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding: 70px 5% 80px;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .eyebrow {
+        font-size: 22px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 13vw, 65px);
+        line-height: 1;
+        margin: 20px 0;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    /* BOUTONS */
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .button,
+    .button.secondary {
+        position: static;
+        margin-left: 0;
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        font-size: 17px;
+    }
+
+    /* IMAGE HERO */
+
+    .hero-art {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .img1 {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        max-height: 550px;
+        object-fit: cover;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+        grid-template-columns: 1fr;
+        padding: 80px 5%;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .img2 {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: auto;
+    }
+
+    .about-content h2 {
+        font-size: clamp(38px, 10vw, 55px);
+    }
+
+    .about-content p {
+        max-width: 100%;
+    }
+
+    .text-link {
+        display: inline-block;
+    }
+
+
+    /* SECTIONS */
+
+    .portfolio,
+    .sketchbook,
+    .services,
+    .contact {
+        padding: 80px 5%;
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+        font-size: clamp(38px, 10vw, 55px);
+    }
+
+
+    /* =========================
+   PORTRAITS - RESPONSIVE
+   ========================= */
+
+.galerie-container {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+.image-item {
+    flex: 0 0 300px;
+    width: 300px;
+    height: 400px;
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.accès {
+    padding-left: 0;
+    display: block;
+    text-align: center;
+}
+
+
+/* Téléphone */
+
+@media (max-width: 800px) {
+
+    .galerie-container {
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+
+    .image-item {
+        flex: 0 0 75vw;
+        width: 75vw;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+    .image-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .accès {
+        padding-left: 0;
+        text-align: center;
+        display: block;
+        font-size: 18px;
+    }
+}
+
+    /* SKETCHBOOK */
+
+    .sketch-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .sketch-card {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .sketch-card.large {
+        height: auto;
+        aspect-ratio: 1 / 1;
+        grid-row: auto;
+    }
+
+
+    /* SERVICES */
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service {
+        padding: 30px 10px;
+    }
+
+    .service-number {
+        margin-bottom: 20px;
+    }
+
+    .service h3 {
+        font-size: 25px;
+    }
+
+
+    /* COMMISSION */
+
+    .commission {
+        padding: 70px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .commission h2 {
+        font-size: clamp(40px, 10vw, 55px);
+    }
+
+    .whatsapp-button {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        padding: 80px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .section-heading p {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .contact-box {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 50px 5%;
+    }
+
+    .footer-logo {
+        font-size: 24px;
+    }
+
+    .socials {
+        gap: 20px;
+    }
+
+    .qr {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .qr img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .ul {
+        margin-top: 25px;
+        text-align: center;
+    }
+
+}
+
+
+/* =========================
+   PETITS TÉLÉPHONES
+   ========================= */
+
+@media (max-width: 480px) {
+
+    .header {
+        padding: 0 4%;
+        position: fixed;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    .hero {
+        padding: 55px 4% 65px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .eyebrow {
+        font-size: 18px;
+    }
+
+    .img1 {
+        max-width: 330px;
+    }
+
+    .about {
+        padding: 65px 4%;
+    }
+
+    .about-content h2 {
+        font-size: 38px;
+    }
+
+    .portfolio,
+    .sketchbook,
+    .services,
+    .contact {
+        padding: 65px 4%;
+    }
+
+    .section-title h2 {
+        font-size: 38px;
+    }
+
+    .image-item {
+        width: 82vw;
+        flex-basis: 82vw;
+    }
+
+    .commission {
+        padding: 60px 4%;
+    }
+
+    .commission h2 {
+        font-size: 40px;
+    }
+
+    .contact {
+        padding: 65px 4%;
+    }
+
+    .qr img {
+        width: 120px;
+        height: 120px;
+    }
+
+}

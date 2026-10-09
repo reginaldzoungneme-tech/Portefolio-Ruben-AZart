@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Document</title>
+    <style>
+          /* =========================
+      VERSION DESKTOP
+      ========================= */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: #000;
+        color: white;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+
+    /* =========================
+      HEADER
+      ========================= */
+
+    .header {
+        height: 80px;
+        padding: 0 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+        border-bottom: 1px solid #ddd6cb;
+    }
+
+    .logo img {
+        width: 250px;
+        height: 30px;
+        object-fit: contain;
+        margin-bottom: -7px;
+    }
+
+    .header nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .header nav a {
+        color: rgb(41, 6, 6);
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        transition: 0.3s ease;
+    }
+
+    .header nav a:hover {
+        color: rgb(240, 62, 62);
+    }
+
+
+    /* =========================
+      SECTION BIOGRAPHIE
+      ========================= */
+
+    section {
+        background: rgb(12, 12, 12);
+
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.8fr);
+
+        align-items: center;
+        gap: 70px;
+
+        min-height: calc(100vh - 80px);
+
+        padding: 80px 7%;
+     }
+
+
+    /* =========================
+      TEXTE BIOGRAPHIE
+      ========================= */
+
+    .biographie {
+        margin: 0;
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .biographie h1 {
+        margin: 0 0 40px 0;
+
+        font-size: 50px;
+        line-height: 1.1;
+
+        color: white;
+
+        opacity: 0;
+        transform: translateY(50px);
+
+        animation: slide-in 1.5s ease-out forwards;
+    }
+
+    .biographie p {
+        margin: 0;
+
+        max-width: 850px;
+
+        font-size: 16px;
+        line-height: 1.8;
+
+        color: #e8e8e8;
+
+        opacity: 0;
+        transform: translateY(50px);
+
+        animation: slide-in 1.5s ease-out forwards;
+    }
+
+
+    /* =========================
+      ANIMATION
+      ========================= */
+
+    @keyframes slide-in {
+
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    /* =========================
+      IMAGE
+      ========================= */
+
+    .img {
+        width: 100%;
+        height: auto;
+
+        margin: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img img {
+        width: 350px;
+        height: 540px;
+
+        object-fit: cover;
+
+        display: block;
+    }
+
+
+    /* =========================
+      FOOTER
+      ========================= */
+
+    footer {
+        position: relative;
+
+        min-height: 380px;
+
+        padding: 60px 7%;
+
+        background-color: black;
+        color: whitesmoke;
+
+        text-align: center;
+    }
+
+
+    /* Logo */
+
+    .footer-logo {
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 3px;
+
+        color: rgb(248, 52, 52);
+
+        font-family: Georgia, serif;
+        font-style: italic;
+    }
+
+    .footer-logo span {
+        color: rgb(248, 52, 52);
+    }
+
+
+    /* Description */
+
+    footer > p {
+        color: whitesmoke;
+        margin: 10px 0 25px;
+    }
+
+
+    /* =========================
+      CONTACT / PROJET
+      ========================= */
+
+    .num_mail {
+        position: absolute;
+
+        left: 7%;
+        top: 120px;
+
+        margin: 0;
+
+        text-align: left;
+    }
+
+    .num_mail p {
+        margin: 8px 0;
+    }
+
+
+    /* Réseaux sociaux */
+
+    .socials {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .socials a {
+        color: white;
+        text-decoration: none;
+
+        transition: 0.3s ease;
+    }
+
+    .socials a:hover {
+        color: rgb(214, 97, 97);
+    }
+
+
+    /* =========================
+      QR CODE
+      ========================= */
+
+    .qr {
+        position: absolute;
+
+        right: 7%;
+        top: 90px;
+
+        margin: 0;
+
+        text-align: right;
+    }
+
+    .qr img {
+        width: 200px;
+        height: 200px;
+
+        object-fit: contain;
+    }
+
+
+    /* =========================
+      COPYRIGHT
+      ========================= */
+
+    .copyright {
+        font-size: 13px;
+        margin-top: 40px;
+    }
+
+
+    /* =========================
+      LIGHTBOX
+      ========================= */
+
+    .lightbox {
+        position: fixed;
+        inset: 0;
+
+        background: rgba(0, 0, 0, 0.95);
+
+        display: none;
+
+        align-items: center;
+        justify-content: center;
+
+        z-index: 2000;
+    }
+
+    .lightbox.active {
+        display: flex;
+    }
+
+    .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+
+        object-fit: contain;
+    }
+
+    .lightbox button {
+        position: absolute;
+
+        top: 25px;
+        right: 35px;
+
+        background: none;
+        border: none;
+
+        color: white;
+
+        font-size: 45px;
+
+        cursor: pointer;
+
+        z-index: 2001;
+    }
+
+        /* =========================
+      TABLETTE - MAX 900px
+      ========================= */
+
+    @media (max-width: 900px) {
+
+        /* =========================
+          HEADER
+          ========================= */
+
+        .header {
+            height: 75px;
+            padding: 0 5%;
+        }
+
+        .logo img {
+            width: 210px;
+            height: 28px;
+        }
+
+        .header nav {
+            gap: 20px;
+        }
+
+        .header nav a {
+            font-size: 15px;
+        }
+
+
+        /* =========================
+          SECTION BIOGRAPHIE
+          ========================= */
+
+        section {
+            grid-template-columns: minmax(0, 1.2fr) minmax(250px, 0.8fr);
+
+            gap: 35px;
+
+            min-height: auto;
+
+            padding: 70px 5%;
+        }
+
+
+        /* =========================
+          TEXTE
+          ========================= */
+
+        .biographie {
+            padding: 10px;
+        }
+
+        .biographie h1 {
+            margin-bottom: 30px;
+
+            font-size: 42px;
+        }
+
+        .biographie p {
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
+
+        /* =========================
+          IMAGE
+          ========================= */
+
+        .img {
+            padding: 10px;
+        }
+
+        .img img {
+            width: 280px;
+            height: 440px;
+        }
+
+
+        /* =========================
+          FOOTER
+          ========================= */
+
+        footer {
+            min-height: 390px;
+
+            padding: 55px 5%;
+        }
+
+        .footer-logo {
+            font-size: 25px;
+        }
+
+        footer > p {
+            font-size: 15px;
+        }
+
+
+        /* =========================
+          CONTACT / PROJET
+          ========================= */
+
+        .num_mail {
+            left: 5%;
+            top: 120px;
+        }
+
+        .num_mail p:first-child {
+            font-size: 30px !important;
+        }
+
+        .num_mail p:nth-child(2) {
+            font-size: 19px !important;
+        }
+
+
+        /* =========================
+          QR CODE
+          ========================= */
+
+        .qr {
+            right: 5%;
+            top: 100px;
+        }
+
+        .qr img {
+            width: 170px;
+            height: 170px;
+        }
+
+
+        /* =========================
+          COPYRIGHT
+          ========================= */
+
+        .copyright {
+            font-size: 12px;
+            margin-top: 40px;
+        }
+
+
+        /* =========================
+          LIGHTBOX
+          ========================= */
+
+        .lightbox {
+            padding: 30px;
+        }
+
+        .lightbox img {
+            max-width: 92%;
+            max-height: 88%;
+        }
+
+        .lightbox button {
+            top: 20px;
+            right: 25px;
+
+            font-size: 40px;
+        }
+    }
+
+        /* =========================
+      TÉLÉPHONE - MAX 600px
+      ========================= */
+
+    @media (max-width: 600px) {
+
+        /* =========================
+          HEADER
+          ========================= */
+
+        .header {
+            height: auto;
+            min-height: 100px;
+
+            padding: 20px 5%;
+
+            flex-direction: column;
+            justify-content: center;
+
+            gap: 18px;
+        }
+
+        .logo img {
+            width: 190px;
+            height: 28px;
+        }
+
+        .header nav {
+            width: 100%;
+
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 12px 18px;
+        }
+
+        .header nav a {
+            font-size: 14px;
+        }
+
+
+        /* =========================
+          SECTION BIOGRAPHIE
+          ========================= */
+
+        section {
+            display: flex;
+            flex-direction: column;
+
+            gap: 40px;
+
+            padding: 60px 5%;
+
+            min-height: auto;
+        }
+
+                /* =========================
+          IMAGE AVANT LA BIOGRAPHIE
+          ========================= */
+
+        .img {
+            order: 1;
+        }
+
+        .biographie {
+            order: 2;
+        }
+
+
+        /* =========================
+          TEXTE
+          ========================= */
+
+        .biographie {
+            width: 100%;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        .biographie h1 {
+            margin: 0 0 30px;
+
+            font-size: 38px;
+
+            text-align: center;
+        }
+
+        .biographie p {
+            margin: 0;
+
+            font-size: 15px;
+            line-height: 1.75;
+
+            text-align: left;
+        }
+
+
+        /* =========================
+          IMAGE
+          ========================= */
+
+        .img {
+            width: 100%;
+
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .img img {
+            width: min(85vw, 320px);
+            height: auto;
+
+            aspect-ratio: 7 / 10;
+
+            object-fit: cover;
+        }
+
+
+        /* =========================
+          FOOTER
+          ========================= */
+
+        footer {
+            min-height: auto;
+
+            padding: 55px 5% 45px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+        }
+
+        footer > p {
+            font-size: 14px;
+        }
+
+
+        /* =========================
+          CONTACT / PROJET
+          ========================= */
+
+        .num_mail {
+            position: static;
+
+            width: 100%;
+
+            margin: 30px 0 0;
+
+            text-align: center;
+        }
+
+        .num_mail p:first-child {
+            font-size: 28px !important;
+        }
+
+        .num_mail p:nth-child(2) {
+            font-size: 18px !important;
+        }
+
+        .socials {
+            justify-content: center;
+
+            margin: 15px 0 0;
+        }
+
+
+        /* =========================
+          QR CODE
+          ========================= */
+
+        .qr {
+            position: static;
+
+            margin-top: 35px;
+
+            text-align: center;
+        }
+
+        .qr img {
+            width: 150px;
+            height: 150px;
+        }
+
+
+        /* =========================
+          COPYRIGHT
+          ========================= */
+
+        .copyright {
+            font-size: 12px;
+
+            margin-top: 35px;
+        }
+
+
+        /* =========================
+          LIGHTBOX
+          ========================= */
+
+        .lightbox {
+            padding: 20px;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 82%;
+        }
+
+        .lightbox button {
+            top: 15px;
+            right: 18px;
+
+            font-size: 38px;
+        }
+    }
+
+   </style>
+</head>
+<body>
+    <header class="header">
+
+        <a href="main.html" class="logo">
+            <img src="img/mlogo.webp" alt="logo">
+        </a>
+
+        <nav id="navigation">
+
+            <a href="main.html">Accueil</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="main.html#services">Services</a>
+            <a href="main.html#contact">Contacts</a>
+
+        </nav>
+    </header>
+      <section>
+        <aside class="biographie">
+          <h1>
+            BIOGRAPHIE
+          </h1>
+          <br><br>
+          <p>
+            Ruben Norbert Anthelme Mahutondji ZOUNGNEME-ALIDJINOU, diplômé Ingénieur de conception en Génie Civil (promotion 2022), connu sous le pseudonyme artistique Ruben AZart, est un artiste multidisciplinaire et autodidacte, passionné par les travaux manuels et les arts visuels.
+            Son parcours artistique débute en 2012 avec l'apprentissage du chantournage manuel lors d'ateliers organisés par le groupement CV-AV de la paroisse Marie Auxiliatrice de Ménontin. En 2017, il se consacre à l'art du portrait au crayon, qu'il perfectionne en autodidacte, marquant ainsi le lancement de sa page Facebook Ruben AZart.
+            En 2022, il élargit ses compétences en design graphique, ce qui lui permet de collaborer avec l'édition Terre de Soleil pour l'illustration de plusieurs ouvrages.
+            Ruben AZart s'est distingué lors de nombreux événements artistiques et culturels en offrant des tableaux aux lauréats, notamment :
+            -	La télé-réalité béninoise Dis-moi qui est la plus belle (2020, 2021, 2022).
+            -	La Journée culturelle centrafricaine au Bénin (2021). 
+            -	Les concours Miss-Mister Bénin et Miss Supranationale du Bénin (2022).
+            En parallèle, il a réalisé de nombreux portraits sur commande, certains ayant été expédiés jusqu'en France, témoignant de la portée internationale de son talent.
+            Porté par une passion pour la créativité et l'artisanat, Ruben AZart continue d'innover et de s'imposer comme une figure montante des arts visuels et manuels au Bénin.
+          </p>
+        </aside>
+        <aside class="img">
+          <img src="img/ruben_azart.png" alt="photo de Ruben">
+        </aside>
+      </section>
+      
+      <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            RUBEN AZART<span>.</span>
+        </div>
+        <p>
+            Portraits • Illustrations - Sketchbook
+        </p>
+         
+        <p class="contact-info">
+          📧 rubenazart@gmail.com <br>
+          📱 +229 61 36 19 36
+        </p>
+
+        <p class="copyright">
+            © 2026 Ruben AZart — Tous droits réservés.
+        </p>
+
+        <aside class="num_mail">
+          <p style="font-size: 24px;">
+               Un projet en-tête?
+          </p>
+          <p style="font-size: 21px;">Commandez un portrait :</p>
+
+          <div class="socials">
+             
+
+            <a  href="https://wa.me/2290161361936" target="_blank">
+                <i style="font-size: 22px;" class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.facebook.com/RubenAzart" target="_blank">
+                <i style="font-size: 22px;" class="fa-brands fa-facebook"></i>
+            </a>
+
+           <a style="font-size: 28px; margin-top: -8px;" href="mailto:rubenazart@gmail.com">
+                📧 
+           </a>
+          </div>
+        </aside>
+        
+        <div class="qr"> 
+            <img src="img/qr_code.png" alt="qr_code">
+        </div>
+
+    </footer>
+
+
+    <!-- LIGHTBOX -->
+
+    <div id="lightbox" class="lightbox">
+
+        <button onclick="closeLightbox()">
+            ×
+        </button>
+
+        <img id="lightbox-image" src="" alt="Œuvre">
+
+    </div>
+</body>
+</html>
